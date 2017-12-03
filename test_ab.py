@@ -11,6 +11,7 @@ wb_A = openpyxl.Workbook()
 # wb_A = openpyxl.load_workbook('test_ab.xlsx')
 sheet_a = wb_A.get_sheet_by_name('Sheet')
 arr_f = [f for f in os.listdir(os.getcwd()) if f.endswith(".xlsx")]
+first_loop = 0
 for f in arr_f:
 	print ("Begin load:"+f)
 	# if f == arr_f[0]:
@@ -19,8 +20,12 @@ for f in arr_f:
 	wb_B = openpyxl.load_workbook(f)
 
 	# sheet_a = wb_A.get_sheet_by_name('Sheet1')
-	r_a = sheet_a.max_row
+	if first_loop== 0:
+		r_a = 0
+	else:
+		r_a = sheet_a.max_row
 	c_a = sheet_a.max_column
+	first_loop += 1 
 	sheet_b = wb_B.get_sheet_by_name('Sheet1')
 	r_b = sheet_b.max_row
 	c_b = sheet_b.max_column
