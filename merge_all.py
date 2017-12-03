@@ -1,4 +1,4 @@
-import openpyxl,os
+import openpyxl,os,time
 from openpyxl.utils import get_column_letter
 wb_A = openpyxl.Workbook()
 sheet_a = wb_A.get_sheet_by_name('Sheet')
@@ -28,4 +28,5 @@ for f in arr_f:
 	loop += 1 
 	print ('End   load '+str(loop)+'/'+str(length)+' : '+f)
 wb_A.save(output)
-print('Done.')
+print('Done..Will finish after 5s')
+time.sleep(5)
