@@ -29,6 +29,7 @@ for f in arr_f:
 
 	
 	for row in range(1, r_b+1 ):
+		print ('write row in ' +str(r_a+row))
 		for col in range(1, c_b+1):
 			sheet_a[get_column_letter(col)+str(r_a+row)].value=sheet_b[get_column_letter(col)+str(row)].value
 		
