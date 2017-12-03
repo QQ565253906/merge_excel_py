@@ -3,7 +3,7 @@
 #	sheet.max_column
 
 #import openpyxl, pprint, pdb
-import openpyxl,os,xlwt
+import openpyxl,os
 # import openpyxl,os,xlwt
 from openpyxl.utils import get_column_letter
 # wb_A = xlwt.Workbook()
