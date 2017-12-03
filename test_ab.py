@@ -3,20 +3,22 @@
 #	sheet.max_column
 
 #import openpyxl, pprint, pdb
+# import openpyxl,os
 import openpyxl,os
-# import openpyxl,os,xlwt
 from openpyxl.utils import get_column_letter
-# wb_A = xlwt.Workbook()
+wb_A = openpyxl.Workbook()
+# sheet_a = wb_A.create_sheet('Sheet1')
 # wb_A = openpyxl.load_workbook('test_ab.xlsx')
+sheet_a = wb_A.get_sheet_by_name('Sheet')
 arr_f = [f for f in os.listdir(os.getcwd()) if f.endswith(".xlsx")]
 for f in arr_f:
 	print ("Begin load:"+f)
-	if f == arr_f[0]:
-		wb_A = openpyxl.load_workbook(f)
-		continue
+	# if f == arr_f[0]:
+		# wb_A = openpyxl.load_workbook(f)
+		# continue
 	wb_B = openpyxl.load_workbook(f)
 
-	sheet_a = wb_A.get_sheet_by_name('Sheet1')
+	# sheet_a = wb_A.get_sheet_by_name('Sheet1')
 	r_a = sheet_a.max_row
 	c_a = sheet_a.max_column
 	sheet_b = wb_B.get_sheet_by_name('Sheet1')
