@@ -17,15 +17,15 @@ for f in arr_f:
 	else:
 		r_a = sheet_a.max_row
 	c_a = sheet_a.max_column
-	loop += 1 
 	sheet_b = wb_B.get_sheet_by_name(S1)
 	r_b = sheet_b.max_row
 	c_b = sheet_b.max_column
 
 	# print('\t\t'+'r_a:'+str(r_a)+'  r_b:'+str(r_b)+'  c_a:'+str(c_a)+'  c_b:'+str(c_b))
-	for row in range(1, r_b+1 ):
+	for row in range(1+(loop!=0), r_b+1 ):
 		for col in range(1, c_b+1):
 			sheet_a[get_column_letter(col)+str(r_a+row)].value=sheet_b[get_column_letter(col)+str(row)].value
+	loop += 1 
 	print ('End   load '+str(loop)+'/'+str(length)+' : '+f)
 wb_A.save(output)
 print('Done.')
